@@ -1,0 +1,25 @@
+{
+  "channel": "ptDave20",
+  "port": 8080,
+  "timeBetweenCommands": 5,
+  "audioCommands": [
+    {
+      "name": "ring",
+      "command": "!ring",
+      "file": "audio/ring.mp3",
+      "timeout": 0
+    },
+    {
+      "name": "ssb_power",
+      "command": "!ssb_power",
+      "file": "audio/ssb_power.wav",
+      "timeout": 0
+    },
+    {
+      "name": "protoss_minerals",
+      "command": "!protoss_minerals",
+      "file": "audio/protoss_minerals.wav",
+      "timeout": 0
+    }
+  ]
+}

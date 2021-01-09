@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stream</title>
+    <script>
+        const url = 'ws://localhost:8080/ws';
+
+        let context;    // Audio context
+        let buf;        // Audio buffer
+        function connect() {
+            let c = new WebSocket(url);
+            c.onmessage = function(msg) {
+                document.getElementById("binary").src = msg.data;
+                document.getElementById("binary").play();
+            }
+
+            c.onclose = function () {
+                window.location.reload();
+            }
+            c.onerror = function(err) {
+                console.log(err)
+                c.close()
+            }
+        }
+        connect()
+    </script>
+</head>
+<body>
+    <audio id="binary"></audio>
+</body>
+</html>
